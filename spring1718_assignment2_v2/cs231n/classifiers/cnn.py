@@ -55,12 +55,12 @@ class ThreeLayerConvNet(object):
         ############################################################################
         C, H, W = input_dim
         self.params = {
-            'W1': np.random.rand(num_filters, C, filter_size, filter_size) * weight_scale,
-            'b1': np.random.rand(num_filters),
-            'W2': np.random.rand((H // 2) * (W // 2) * num_filters, hidden_dim) * weight_scale,
-            'b2': np.random.rand(hidden_dim),
-            'W3': np.random.rand(hidden_dim, num_classes) * weight_scale,
-            'b3': np.random.rand(num_classes)
+            'W1': np.random.randn(num_filters, C, filter_size, filter_size) * weight_scale,
+            'b1': np.zeros(num_filters),
+            'W2': np.random.randn((H // 2) * (W // 2) * num_filters, hidden_dim) * weight_scale,
+            'b2': np.zeros(hidden_dim),
+            'W3': np.random.randn(hidden_dim, num_classes) * weight_scale,
+            'b3': np.zeros(num_classes)
         }
         ############################################################################
         #                             END OF YOUR CODE                             #
